@@ -1,0 +1,34 @@
+# data directories
+input/
+output/
+
+
+# data extensions
+*.csv
+*.dta
+*.RData
+*.Rds
+*.tab
+
+.DS_Store
+
+# cruft
+*.ipynb_checkpoints
+*.log
+*.bbl
+*.bcf
+*.fls
+*.bcf
+*.run.xml
+**/*_cache/*
+
+# spatial
+*.shp
+*.shx
+*.qpj
+*.dbf
+*.swp
+*.json
+*.geojson
+
+

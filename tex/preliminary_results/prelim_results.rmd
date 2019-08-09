@@ -1,0 +1,86 @@
+---
+title: Title
+author: Apoorva Lal
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    theme: spacelab
+    highlight: tango
+    code_folding: hide
+    toc: true
+    toc_float: false
+    toc_depth: 3
+    fig_width:  10
+    fig_height: 8
+---
+
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r}
+options(digits=2)
+rm(list=ls())
+library(LalRUtils)
+
+load_or_install(c('tidyverse', 'magrittr', 'data.table', 'knitr',
+  'stargazer','lfe','rio', 'gridExtra', 'kableExtra'))
+
+theme_set(lal_plot_theme())
+
+knitr::opts_knit$set( echo=TRUE, warning=FALSE, message=FALSE, cache=FALSE )
+knitr::opts_chunk$set( echo=TRUE, warning=FALSE, message=FALSE, cache=FALSE )
+```
+
+The quick brown fox jumped over the lazy dog^[but the dog's laziness
+is heavily debated].
+
+\begin{align*}
+\max_{c_t,k_{t+1}} &  \sum_{t=1}^{\infty} \beta^t u(c_t)  \\
+  s.t. & \enspace c_{t} + k_{t+1} \leq f(k_t) + (1-\delta)k_t
+\end{align*}
+
+# Estimation Framework
+
+\begin{align*}
+\text{outcome}_{ict} = \alpha_i & + \sum_{k=0}^2 \beta_{t-k}^p
+PPI_{ict-k} + \gamma_{ct} + \epsilon_{ict} \\
+\text{outcome}_{ict} = \alpha_i & + \sum_{k=0}^2 \beta_{t-k}^p PPI_{ict-k} +
+\sum_{k=0}^2 + \beta_{t-k}^m CPI_{ict-k} + \\ & \gamma_{c}\times
+trend_t + \epsilon_{ict}
+\end{align*}
+
+# Regression output
+
+```{r}
+lm1 = felm(hwy ~ cyl ,   data = mpg)
+lm2 = (felm(hwy ~ cyl | factor(trans)| 0 | manufacturer, data=mpg))
+```
+
+```{r, results='asis'}
+#%%
+stargazer(lm1, lm2, type='html')
+#%%
+```
+
+# Figures
+
+```{r, fig.margin=T}
+#%%
+library(ggplot2)
+mtcars2 <- mtcars
+mtcars2$am <- factor(
+  mtcars$am, labels = c('automatic', 'manual')
+)
+ggplot(mtcars2, aes(hp, mpg, color = am)) +
+  geom_point() + geom_smooth() +
+  theme(legend.position = 'bottom')
+#%%
+```
+
+# Bibliography

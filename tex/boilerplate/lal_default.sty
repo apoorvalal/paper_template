@@ -1,0 +1,85 @@
+% sensible defaults for assignments/papers
+% can be sourced directly using \usepackage , e.g.
+% \usepackage{"/home/alal/tex_templates/lal_default"}
+
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+%
+
+\usepackage{
+booktabs,
+cancel,
+fancyhdr,
+graphics,
+hyperref,
+lipsum,
+listings,
+mathtools,
+setspace,
+subfig,
+todonotes,
+url,
+xcolor
+}
+
+\usepackage[shortlabels]{enumitem}
+
+% fixes encodings for accented letters in bib names
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+
+\definecolor{maroon}{rgb}{0.5, 0.0, 0.0}
+
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Apoorva Lal},
+            pdfkeywords = {JEL keywords},
+            colorlinks=true,
+            citecolor=maroon,
+            urlcolor=blue,
+            linkcolor=red,
+            pdfborder={0 0 0}}
+
+% adobe utopia font family - fourier
+% \usepackage{fourier}
+% palatino font family - mathpazo
+% \usepackage{mathpazo}
+% bitstream charter font family
+% \usepackage{charter}
+% charter with math
+% \usepackage[bitstream-charter]{mathdesign}
+% times new roman (boooring)
+% \usepackage{mathptm}
+
+% Smallcaps section headers
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% header last updated
+\newcommand{\updateinfo}[1][\today]{\par\hfill{\scriptsize
+Last updated on #1}}
+
+% margins
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{7in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\oddsidemargin}{-0.25in}
+
+
+\usepackage{lscape}
+\newcommand{\bland}{\begin{landscape}}
+\newcommand{\eland}{\end{landscape}}
+
+\input{'/home/alal/Templates/boilerplate/math_shortcuts.tex'}
+
+\endinput

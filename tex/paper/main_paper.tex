@@ -1,0 +1,67 @@
+\documentclass[12pt,reqno]{amsart} % add titlepage param for separate title page
+% nice AMS math paper template from Steven Miller at Williams
+% original can be downloaded at
+% https://web.williams.edu/Mathematics/sjmiller/public_html/math/LaTexMathematica/papertemplate.tex
+\input{../boilerplate/mpaper_boilerplate}
+\usepackage{graphics}
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text.
+
+% bibliography
+\usepackage[
+backend=biber,
+style=authoryear,
+citestyle=authoryear,
+]{biblatex}
+\addbibresource{../biblio.bib}
+
+\renewbibmacro{in:}{}
+
+\setcounter{secnumdepth}{5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Paper Title}
+
+\author{Apoorva Lal}
+\email{{\href{mailto:apoorval@stanford.edu}{apoorval@stanford.edu}}}
+\address{Stanford University, CA}
+
+% \author{Coauthor 1}
+% \email{\textcolor{blue}{\href{mailto:email}{email}}}
+% \address{Stanford University, CA}
+
+\keywords{KW1, KW2}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract} Something concise
+\end{abstract}
+
+\maketitle
+
+% \tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction} \label{intro}
+
+\parencite{cardMinimumWagesEmployment1994}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Results}
+
+\lipsum[5]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
+\printbibliography
+
+\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\medskip
+
+\end{document}
