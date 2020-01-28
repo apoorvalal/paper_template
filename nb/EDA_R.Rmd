@@ -31,9 +31,8 @@ header-includes:
 ####################################################
 rm(list=ls())
 library(LalRUtils)
-load_or_install(c('knitr','tidyverse','magrittr',
-  'rio','data.table', 'stargazer'))
-   #, "lib2"))
+libreq(knitr,tidyverse,magrittr,
+  rio,data.table, stargazer)
 theme_set(lal_plot_theme())
 set.seed(42)
 ####################################################
