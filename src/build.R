@@ -1,1 +1,2 @@
-library(data.table)
+library(LalRUtils)
+libreq(data.table, tidyverse, magrittr, janitor)

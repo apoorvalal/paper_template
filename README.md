@@ -7,10 +7,10 @@ Modifications:
 - symlink to a master bibliography file on dropbox
 - contains several boilerplate files that I use to tweak tex
 
-
 ---
 
-This folder provides an all-encompassing working structure for empirical papers.
+This folder provides an all-encompassing working structure for
+empirical papers.
 
 It organizes every step of the process: merging and cleaning (several)
 data sets, performing analyses (tables, figures, regressions), writing
@@ -43,7 +43,7 @@ This workflow requires:
 ## 1. Folders
 
 #### `/nb`
-- Code for fast prototyping / Exploratory data analysis. Use `purl` (R) or `jupyter nbscript` to convert to a script and move to `/src` whenever something substantial is done
+- Code for fast prototyping / Exploratory data analysis. Use `rmarkdown::purl` (R) or `jupyter nbscript` to convert to a script and move to `/src` whenever something substantial is done
 
 ##### `/src`
 - Any code that manipulates build data and performs analysis should be put here.
