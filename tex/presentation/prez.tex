@@ -4,44 +4,41 @@
 \usepackage{bookmark}
 \hypersetup{bookmarksdepth=4,bookmarksnumbered=true,bookmarksopen=true}
 % either
-% \usetheme{metropolis}
+\usetheme{metropolis}
 % or {
-\usetheme[compress]{Berlin}
-\setbeamerfont{section in head/foot}{size=\tiny}
-% hyperlinks and math shortcuts
-\usepackage{../boilerplate/lal_default_beamer}
+% \usetheme[compress]{Berlin}
+% \setbeamerfont{section in head/foot}{size=\tiny}
 
-% \usepackage{/home/alal/Templates/boilerplate/lal_default_beamer}
+% hyperlinks and math shortcuts
+\usepackage{/home/alal/Templates/boilerplate/lal_default_beamer}
+
 % set universal bibliography (change to point to your master bibfile)
 \bibliographystyle{plainnat}
 \usepackage[backend=biber,
-citestyle=authoryear
+  citestyle=authoryear
 ]{biblatex}
-\addbibresource{../biblio.bib}
+\addbibresource{/home/alal/Dropbox/MyLibrary2.bib}
 
 % fonts
 \usepackage[T1]{fontenc}
-\usefonttheme{structuresmallcapsserif}
-\usecolortheme{beaver}
-% \usefonttheme{serif} % for serif fonts
-% \usepackage{cmbright} % thin default sans serif
-% \usepackage[condensed]{roboto} % roboto condensed
-\usepackage[sfdefault,scaled=.85]{FiraSans} % fira
 
+% \usepackage[no-math]{fontspec}
+% \setsansfont{Fira Sans Condensed}
+% \setmainfont{Fira Sans Condensed}
 
-\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\usepackage[no-math]{fontspec}
+\setsansfont{IBM Plex Sans Condensed}
+\setmainfont{IBM Plex Sans Condensed}
+
 
 \beamertemplatenavigationsymbolsempty
 
 %Information to be included in the title page:
 \title{Title}
 \subtitle{subtitle}
-
 \author{Apoorva Lal}
 \institute{Stanford}
-
 \date{Date}
-\titlegraphic{\includegraphics[width=0.17\textwidth,height=.3\textheight]{/home/alal/Templates/boilerplate/Stanford-Tree.jpg}}
 
 \begin{document}
 %------------------------------------------------
@@ -49,16 +46,16 @@ citestyle=authoryear
 \begin{frame}
 \frametitle{Overview}
 \tableofcontents
+% \tableofcontents[currentsection,subsubsectionstyle=hide] % optional for signposting
 \end{frame}
 %------------------------------------------------
-%------------------------------------------------
-\section{Introduction}
-\tableofcontents[currentsection,subsubsectionstyle=hide]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %------------------------------------------------
 \subsection{Introduction}
 \begin{frame}\frametitle{Introduction}
 Stuff
-\cite{AngristMostlyharmlesseconometrics2008b}
+\cite{angristMostlyHarmlessEconometrics2008}
 \end{frame}
 %------------------------------------------------
 \subsection{Summary of Results}
@@ -66,16 +63,13 @@ Stuff
 Upshot
 \end{frame}
 
-%------------------------------------------------
-%------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theory}
 \tableofcontents[currentsection,subsubsectionstyle=hide]
 %------------------------------------------------
 \subsection{Model}
 \begin{frame}[t]\frametitle{Model}
-\begin{center}
-centered text
-\end{center}
 \begin{align*}
 \maximise_{c_t,k_{t+1}} &  \sum_{t=1}^{\infty} \beta^t u(c_t)  \\
   s.t. & \enspace c_{t} + k_{t+1} \leq f(k_t) + (1-\delta)k_t
@@ -83,18 +77,22 @@ centered text
 Everyone does infinite horizon optimisation, right?
 \end{frame}
 %------------------------------------------------
+% another slide here
 %------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Empirics}
-\tableofcontents[currentsection,subsubsectionstyle=hide]
+
+%------------------------------------------------
 \subsection{Data}
 \begin{frame}[label=data_slide]\frametitle{Main Data}
 
 \begin{columns}
 \begin{column}{0.6\textwidth}
-\begin{itemize}
-   \item some text here some text here some text here some text here some text here
+\begin{wideitemize}
+   \item some text here some text here some text here some text here
+   some text here
    \item \hyperlink{appendix_end}{\beamergotobutton{Details in appendix}}
-\end{itemize}
+\end{wideitemize}
 \end{column}
 \begin{column}{0.4\textwidth}
     \begin{center}
@@ -103,14 +101,10 @@ Everyone does infinite horizon optimisation, right?
      \end{center}
 \end{column}
 \end{columns}
-
 \end{frame}
-
 %------------------------------------------------
-
 \subsection{Estimation}
 \begin{frame}\frametitle{Estimation Framework}
-
 \begin{align*}
 \text{outcome}_{ict} = \alpha_i & + \sum_{k=0}^2 \beta_{t-k}^p
 PPI_{ict-k} + \gamma_{ct} + \epsilon_{ict} \\
@@ -118,11 +112,9 @@ PPI_{ict-k} + \gamma_{ct} + \epsilon_{ict} \\
 \sum_{k=0}^2 + \beta_{t-k}^m CPI_{ict-k} + \\ & \gamma_{c}\times
 trend_t + \epsilon_{ict}
 \end{align*}
-
 \end{frame}
-
 %------------------------------------------------
-%------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 \subsection{Conclusion}
 
@@ -145,7 +137,7 @@ trend_t + \epsilon_{ict}
 Thank you!
 \end{center}
 \end{frame}
-%------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \begin{frame}[label=appendix_end]{Appendix land}
   \begin{wideitemize}
