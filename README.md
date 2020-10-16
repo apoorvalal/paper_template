@@ -1,3 +1,4 @@
+# Lal Paper Template
 
 Fork of [Ricardo Dahis'](https://github.com/rdahis/paper_template) excellent repo adapted
 for a more linux and R-centric workflow.
