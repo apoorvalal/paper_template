@@ -1,0 +1,269 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[ignorenonframetext,]{beamer}
+\IfFileExists{pgfpages.sty}{\usepackage{pgfpages}}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+
+  \usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{fixltx2e} % provides \textsubscript
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
+
+
+
+
+
+
+
+  \usetheme[background=dark]{metropolis}
+
+
+
+
+
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+  \usepackage{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+
+\newif\ifbibliography
+  \usepackage[style=authoryear,]{biblatex}
+      \addbibresource{/home/alal/Dropbox/MyLibrary2.bib}
+  
+
+\hypersetup{
+      pdftitle={Presentation Topic},
+        pdfauthor={Apoorva Lal},
+          pdfborder={0 0 0},
+    breaklinks=true}
+%\urlstyle{same}  % Use monospace font for urls
+
+
+
+
+
+  \usepackage{longtable,booktabs}
+  \usepackage{caption}
+  % These lines are needed to make table captions work with longtable:
+  \makeatletter
+  \def\fnum@table{\tablename~\thetable}
+  \makeatother
+
+  \usepackage{graphicx,grffile}
+  \makeatletter
+  \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+  \def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
+  \makeatother
+  % Scale images if necessary, so that they will not overflow the page
+  % margins by default, and it is still possible to overwrite the defaults
+  % using explicit options in \includegraphics[width, height, ...]{}
+  \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+  \AtBeginPart{
+    \let\insertpartnumber\relax
+    \let\partname\relax
+    \frame{\partpage}
+  }
+  \AtBeginSection{
+    \ifbibliography
+    \else
+      \let\insertsectionnumber\relax
+      \let\sectionname\relax
+      \frame{\sectionpage}
+    \fi
+  }
+  \AtBeginSubsection{
+    \let\insertsubsectionnumber\relax
+    \let\subsectionname\relax
+    \frame{\subsectionpage}
+  }
+
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+  \setcounter{secnumdepth}{0}
+
+
+
+% import maths shortcuts
+\input{/home/alal/Templates/boilerplate/math_shortcuts.tex}
+
+  \definecolor{mLightBrown}{HTML}{EB811B}
+  \definecolor{mLightGreen}{HTML}{14B03D}
+  \setbeamercolor{block body}{bg=mDarkTeal!30}
+  \setbeamercolor{frametitle}{bg=mLightBrown}
+
+  \title[]{Presentation Topic}
+
+
+  \author[
+        Apoorva Lal
+    ]{Apoorva Lal}
+
+  \institute[
+    ]{
+    Stanford
+    }
+
+\date[
+      \today
+  ]{
+      \today
+        }
+
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+
+\begin{document}
+
+% Hide progress bar and footline on titlepage
+  \begin{frame}[plain]
+  \titlepage
+  \end{frame}
+
+
+  \begin{frame}
+  \tableofcontents[hideallsubsections]
+  \end{frame}
+
+\hypertarget{scratch}{%
+\section{Scratch}\label{scratch}}
+
+\begin{frame}{Title here}
+\protect\hypertarget{title-here}{}
+\parencite{leamer1983let}
+
+\scriptsize cite but don't read
+\end{frame}
+
+\begin{frame}{Another slide}
+\protect\hypertarget{another-slide}{}
+The theme provides sensible defaults to \emph{emphasize} text,
+\alert{accent} parts or show \textbf{bold} results.
+
+\[
+y = \beta_0 + \vee{x}_i' \ve{\beta} + \epsi_i
+\]
+
+Hello, world!
+\end{frame}
+
+\begin{frame}{Mathy slide}
+\protect\hypertarget{mathy-slide}{}
+\metroset{block=fill}
+\begin{alertblock}{AIPW Estimator}
+$$
+\wh{\tau}_{\text{ipw}}^{\text{ate}} = \ooN \sumin \Bigpar{
+  \underbrace{\frac{Y_iD_i}{\hat{\pi}(\Vect{X}_i)}}_{\Exp{Y_1}} -
+  \underbrace{\frac{Y(1 - D_i)}{(1 - \hat{\pi}(\Vect{X}_i))}}_{\Exp{Y_0}}}
+= \ooN \sumin Y_i \Bigpar{\frac{D_i}{\wh{\pi}(\ve{X}_i)} - \frac{1 -
+D_i}{1 - \wh{\pi} (\ve{X}_i)}}
+$$
+
+\end{alertblock}
+
+Places highest weight for observations with \(\wh{\pi} \approx 0.5\)
+\end{frame}
+
+\hypertarget{core-presentation-ingredients}{%
+\section{Core Presentation
+Ingredients}\label{core-presentation-ingredients}}
+
+\begin{frame}{Figure from R}
+\protect\hypertarget{figure-from-r}{}
+\includegraphics{slides_files/figure-beamer/figscatter-1.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{R Table Example}
+\protect\hypertarget{r-table-example}{}
+A simple \texttt{knitr::kable} example:
+
+\begin{longtable}[]{@{}lrrrrrrrr@{}}
+\caption{(Parts of) the mtcars dataset}\tabularnewline
+\toprule
+& mpg & cyl & disp & hp & drat & wt & qsec & vs\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& mpg & cyl & disp & hp & drat & wt & qsec & vs\tabularnewline
+\midrule
+\endhead
+Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 & 2.620 & 16.46 &
+0\tabularnewline
+Mazda RX4 Wag & 21.0 & 6 & 160 & 110 & 3.90 & 2.875 & 17.02 &
+0\tabularnewline
+Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 & 2.320 & 18.61 &
+1\tabularnewline
+Hornet 4 Drive & 21.4 & 6 & 258 & 110 & 3.08 & 3.215 & 19.44 &
+1\tabularnewline
+Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 & 17.02 &
+0\tabularnewline
+\bottomrule
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Animation}
+\protect\hypertarget{animation}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  this
+\item
+  Now this
+\item
+  And now this
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Columns}
+\protect\hypertarget{two-columns}{}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+
+  \bi
+    \item eh?
+    \item bleh
+  \ei
+
+\end{column}
+\begin{column}{0.5\textwidth}
+    \begin{center}
+     \includegraphics[width=1\textwidth]{../../output/figures/fig.pdf}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+  \begin{frame}[allowframebreaks]{}
+  \bibliographytrue
+  \printbibliography[heading=none]
+  \end{frame}
+
+
+\end{document}
