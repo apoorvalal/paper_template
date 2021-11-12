@@ -11,7 +11,7 @@ tmp/*
 
 .DS_Store
 
-# cruft
+# tex/nb cruft 
 *.ipynb_checkpoints
 *.log
 *.bbl
@@ -19,6 +19,12 @@ tmp/*
 *.fls
 *.bcf
 *.run.xml
+*.fdb_latexmk
+*.nav
+*.snm
+*.toc
+*.xdv
+*.tdo
 **/*_cache/*
 
 # spatial
